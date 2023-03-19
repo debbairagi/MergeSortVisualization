@@ -5,12 +5,12 @@ import sys
 
 root = Tk()
 root.title('Merge Sort Representation')
-root.iconbitmap('D:/pyproject/Sorting/img/logo.ico')
+root.iconbitmap('D:/pyproject/mergesortvisual/img/logo.ico')
 root.geometry('1200x675')
 
 # Background Image
 bg_set = Canvas(root, bg="gray16", height=200, width=200)
-filename = PhotoImage(file="D:/pyproject/Sorting/img/sort.png")
+filename = PhotoImage(file="D:/pyproject/mergesortvisual/img/sort.png")
 background_label = Label(root, image=filename)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
