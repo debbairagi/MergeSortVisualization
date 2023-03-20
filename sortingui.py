@@ -18,7 +18,7 @@ data = []
 
 def drawData(data, colorArray):
     canvas.delete("all")
-    c_height = 720
+    c_height = 580
     c_width = 1280
     x_width = c_width / (len(data) + 1)
     offset = 30
@@ -27,7 +27,7 @@ def drawData(data, colorArray):
     for i, height in enumerate(normalizedData):  # Create boxes
         # top left
         x0 = i * x_width + offset + spacing
-        y0 = c_height - height * 380
+        y0 = c_height - height * 500
         # bottom right
         x1 = ((i + 1) * x_width) + offset
         y1 = c_height
@@ -63,13 +63,13 @@ def StartAlgorithm():
 # UI Base Frame
 
 # Interface to hold the widgets
-UI_frame = Frame(root, width=1280, height=660, bg='#44B95B')
+UI_frame = Frame(root, width=1280, height=200, bg='#44B95B')
 UI_frame.grid(row=1, column=0, padx=20, pady=5)
 
 # Interface for graphics
 canvas = Canvas(root, width=1280, height=500, bg='white')
 canvas.grid(row=0, column=0, padx=20, pady=5)
-img = ImageTk.PhotoImage(Image.open("D:/pyproject/MergeSortVisualization/img/Merge-Sort-Algorithm.png"))
+img = ImageTk.PhotoImage(Image.open("D:/pyproject/MergeSortVisualization/img/merge-sort.png"))
 canvas.create_image(10, 10, anchor=NW, image=img)
 
 # User Interface Area
@@ -86,7 +86,7 @@ algMenu.current(0)  # Default value of dropdown box
 # Speed Scale to choose how fast or slow
 speedScale = Scale(UI_frame, from_=0, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL,
                    label="Select Speed [s]", font=('Helvetica', 10))
-speedScale.set(0.1)
+speedScale.set(1)
 speedScale.grid(row=0, column=2, padx=5, pady=5)
 
 # Start button to start the sorting process
@@ -95,8 +95,8 @@ start_button.grid(row=0, column=3, padx=5, pady=5)
 
 # Row[1]
 # Scale to select the size of the array
-sizeEntry = Scale(UI_frame, from_=3, to=40, resolution=1, orient=HORIZONTAL, label="Data Size", font=('Helvetica', 10))
-sizeEntry.set(20)
+sizeEntry = Scale(UI_frame, from_=3, to=15, resolution=1, orient=HORIZONTAL, label="Data Size", font=('Helvetica', 10))
+sizeEntry.set(10)
 sizeEntry.grid(row=1, column=0, padx=5, pady=5)
 
 # Scale to select the minimum value of the array
