@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter.font as font
 from subprocess import call
-import sys
 
 root = Tk()
 root.title('Merge Sort Representation')
@@ -18,7 +17,6 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 # Button For the Next Screen
 def clickbutton():
     call(["python", "sortingui.py"])
-    root.destroy()
 
 
 buttonFont = font.Font(family='Helvetica', size=16, weight='bold')
