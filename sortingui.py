@@ -70,7 +70,7 @@ UI_frame.grid(row=1, column=0, padx=20, pady=5)
 # Interface for graphics
 canvas = Canvas(root, width=1280, height=500, bg='white')
 canvas.grid(row=0, column=0, padx=20, pady=5)
-img = ImageTk.PhotoImage(Image.open("D:/pyproject/MergeSortVisualization/img/merge-sort.png"))
+img = ImageTk.PhotoImage(Image.open("img/merge-sort.png"))
 canvas.create_image(10, 10, anchor=NW, image=img)
 
 # User Interface Area
