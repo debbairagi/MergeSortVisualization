@@ -7,7 +7,8 @@ from PIL import ImageTk, Image
 from mergesort import merge_sort
 
 root = Tk()
-root.title("Sorting Algorithm Visualizer")
+root.title('Merge Sort Representation')
+root.iconbitmap('D:/pyproject/MergeSortVisualization/img/logo.ico')
 root.maxsize(1280, 720)
 root.config(bg='#48C9B0')
 
@@ -55,7 +56,7 @@ def Generate():
 
 
 # function to start the Merge sort algorithm
-def StartAlgorithm():
+def callMergeAlgorithm():
     global data
     merge_sort(data, drawData, speedScale.get())
 
@@ -74,7 +75,7 @@ canvas.create_image(10, 10, anchor=NW, image=img)
 
 # User Interface Area
 # Row[0]
-algo_label = Label(UI_frame, text='Algorithm:', bg='#34495E', fg='white', font=('Helvetica', 12, 'bold'))
+algo_label = Label(UI_frame, text='Algorithm Name:', bg='#34495E', fg='white', font=('Helvetica', 12, 'bold'))
 algo_label.grid(row=0, column=0, padx=5, pady=5, sticky=E)
 
 # Dropdown menu for algorithms
@@ -90,7 +91,7 @@ speedScale.set(1)
 speedScale.grid(row=0, column=2, padx=5, pady=5)
 
 # Start button to start the sorting process
-start_button = Button(UI_frame, text='Start', command=StartAlgorithm, bg='#D50032', fg='white', font=('Helvetica', 12))
+start_button = Button(UI_frame, text='Start', command=callMergeAlgorithm, bg='#D50032', fg='white', font=('Helvetica', 12))
 start_button.grid(row=0, column=3, padx=5, pady=5)
 
 # Row[1]
@@ -115,7 +116,7 @@ generate_button.grid(row=1, column=3, padx=5, pady=5)
 
 # Row[2]
 # Text box for manual user input
-input_label = Label(UI_frame, text='Input Values:', bg='#34495E', fg='white', font=('Helvetica', 12, 'bold'))
+input_label = Label(UI_frame, text='Input Integer by Space:', bg='#34495E', fg='white', font=('Helvetica', 12, 'bold'))
 input_label.grid(row=2, column=0, padx=5, pady=5, sticky=E)
 
 input_box = Text(UI_frame, height=1, width=50, font=('Helvetica', 10))
